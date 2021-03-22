@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">Some Quiz</string>
+    <string name="title">Quiz</string>
+    <string name="true_text">TRUE</string>
+    <string name="false_text">FALSE</string>
+    <string name="previous_button_description">previous button</string>
+    <string name="next_button_description">next button</string>
+    <string name="counter_text">0 / 0</string>
+    <string name="best_score_text">Best score:</string>
+    <string name="current_score_text">Current score:</string>
+    <string name="reset_text">reset\ngame</string>
+    <string name="reset_best_text">reset\nbest\nscore</string>
+</resources>

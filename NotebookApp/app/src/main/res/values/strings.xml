@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">NotebookApp</string>
+    <string name="drop_table">DROP TABLE IF EXISTS</string>
+    <string name="product_name">Product name</string>
+    <string name="quantity">Quantity</string>
+    <string name="date">Date</string>
+    <string name="edit_note_text">Edit note</string>
+    <string name="delete_note_text">Delete note</string>
+</resources>
