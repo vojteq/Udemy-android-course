@@ -1,11 +1,13 @@
 package vojteq.android.courselistfragment;
 
-import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ListView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -18,12 +20,12 @@ import vojteq.android.courselistfragment.data.CourseArrayAdapter;
 import vojteq.android.courselistfragment.data.CourseData;
 import vojteq.android.courselistfragment.util.ScreenUtil;
 
-public class MyFragment extends ListFragment {
+public class CourseListFragment extends ListFragment {
 
     private List<Course> courses = new CourseData().courseList();
+    private Callbacks activity;
 
-
-    public MyFragment() {
+    public CourseListFragment() {
     }
 
     @Override
@@ -40,6 +42,22 @@ public class MyFragment extends ListFragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        return inflater.inflate(R.layout.my_fragment, container, false);
+        return inflater.inflate(R.layout.course_list_fragment, container, false);
+    }
+
+    @Override
+    public void onListItemClick(@NonNull ListView l, @NonNull View v, int position, long id) {
+        Course course = courses.get(position);
+        this.activity.onItemSelected(course, position);
+    }
+
+    @Override
+    public void onAttach(@NonNull Context context) {
+        super.onAttach(context);
+        this.activity = (Callbacks) context;
+    }
+
+    public interface Callbacks {
+        void onItemSelected(Course course, int position);
     }
 }
